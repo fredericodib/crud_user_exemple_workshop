@@ -1,0 +1,21 @@
+<h1>Novo User</h1>
+
+<% unless @user.errors.full_messages.empty? %>
+	<% @user.errors.full_messages.each do |er| %>
+		<h5><%= er %></h5>
+	<% end %>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+  <%= f.label :idade %>
+  <%= f.text_field :idade %>
+  <br />
+  <%= f.submit %>
+<% end %>
+
+<br>
+
+<%= link_to 'voltar para index', users_path %>
